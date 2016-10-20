@@ -1,0 +1,1 @@
+router.addRoute("/pc/${projName}/${pageName}.html", []);

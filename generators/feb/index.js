@@ -36,12 +36,10 @@ module.exports = yeoman.Base.extend({
       this.log(chalk.yellow('WARN:') + ' 请确认是在nlife-feb工程根目录下执行当前命令!');
     }
 
-    /*
     console.log(this.destinationPath());
     console.log(this.destinationRoot());
     console.log(this.basePath);
     console.log(this.templatePath());
-    */
   },
 
   writing: function () {
@@ -50,18 +48,19 @@ module.exports = yeoman.Base.extend({
     var app   = _.template(this.fs.read(this.templatePath('./htmls/pcweb/pageapp.js')));
     var entry = _.template(this.fs.read(this.templatePath('./htmls/pcweb/page.js')));
     var scss  = _.template(this.fs.read(this.templatePath('./htmls/pcweb/page.scss')));
+    var name  = this.props.pageName.substring(0,1).toUpperCase() + this.props.pageName.substring(1);
 
-    this.fs.write(this.destinationPath('./components/' + this.props.pageName + '/app.js'), app({
+    this.fs.write(this.destinationPath('./app/front_end/app/components/' + this.props.pageName + '/app.js'), app({
+      appname: name,
+      pageName: name,
+      classedName: name
+    }));
+    this.fs.write(this.destinationPath('./app/front_end/app/pages/' + this.props.pageName + '.js'), entry({
       appname: this.props.pageName,
       pageName: this.props.pageName,
-      classedName: this.props.pageName
+      classedName: name
     }));
-    this.fs.write(this.destinationPath('./pages/' + this.props.pageName + '.js'), entry({
-      appname: this.props.pageName,
-      pageName: this.props.pageName,
-      classedName: this.props.pageName
-    }));
-    this.fs.write(this.destinationPath('./scss/' + this.props.pageName + '.scss'), scss());
+    this.fs.write(this.destinationPath('./app/front_end/app/scss/' + this.props.pageName + '.scss'), scss());
   },
 
   install: function () {
