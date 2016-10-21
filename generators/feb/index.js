@@ -48,6 +48,7 @@ module.exports = yeoman.Base.extend({
     var app   = _.template(this.fs.read(this.templatePath('./htmls/pcweb/pageapp.js')));
     var entry = _.template(this.fs.read(this.templatePath('./htmls/pcweb/page.js')));
     var scss  = _.template(this.fs.read(this.templatePath('./htmls/pcweb/page.scss')));
+    var html  = _.template(this.fs.read(this.templatePath('./htmls/pcweb/page.html')));
     var name  = this.props.pageName.substring(0,1).toUpperCase() + this.props.pageName.substring(1);
 
     this.fs.write(this.destinationPath('./app/front_end/app/components/' + this.props.pageName + '/app.js'), app({
@@ -59,6 +60,9 @@ module.exports = yeoman.Base.extend({
       appname: this.props.pageName,
       pageName: this.props.pageName,
       classedName: name
+    }));
+    this.fs.write(this.destinationPath('./htmls/' + this.props.pageName + '.html'), html({
+      pageName: this.props.pageName
     }));
     this.fs.write(this.destinationPath('./app/front_end/app/scss/' + this.props.pageName + '.scss'), scss());
   },
