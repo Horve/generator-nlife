@@ -36,10 +36,10 @@ module.exports = yeoman.Base.extend({
       this.log(chalk.yellow('WARN:') + ' 请确认是在nlife-feb工程根目录下执行当前命令!');
     }
 
-    console.log(this.destinationPath());
-    console.log(this.destinationRoot());
-    console.log(this.basePath);
-    console.log(this.templatePath());
+    //console.log(this.destinationPath());
+    //console.log(this.destinationRoot());
+    //console.log(this.basePath);
+    //console.log(this.templatePath());
   },
 
   writing: function () {
