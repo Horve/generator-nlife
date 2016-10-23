@@ -6,6 +6,8 @@
  * page of the <%= appname %>
  * `<<%= classedName %>App/>` main file
  */
+
+import React from 'react';
 var Header = require('../common/header.js');
 var Footer = require('../common/footer.js');
 var Sidebar = require('../common/sidebar.js');
