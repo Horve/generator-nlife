@@ -7,10 +7,12 @@
  * `<<%= classedName %>App/>` entry file
  */
 var g_mend = new Date();
+import React from 'react';
+import ReactDOM from 'react-dom'
 
 var <%= classedName %>App = require('../components/<%= pageName %>/app.js');
 
-React.render(
+ReactDOM.render(
     <<%= classedName %>App />,
     document.getElementById('container')
 );
