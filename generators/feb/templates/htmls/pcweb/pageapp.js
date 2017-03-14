@@ -58,7 +58,7 @@ export default module.exports = class <%= classedName %>App extends React.Compon
             <div id="nlife">
                 <Sidebar type='my_retailer'/>
                 <div className="content">
-                    <Card bordered={false} title="我的零售商" extra={extra}>
+                    <Card bordered={false} title="页面名称" extra={extra}>
 
                     </Card>
                     <Footer />
