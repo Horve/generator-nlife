@@ -1,3 +1,10 @@
+/* 静态构建时使用 */
 @import "../components/common/mixins.scss";
 @import "../components/common/layout.scss";
 @import "../components/common/common.scss";
+
+/* 动态构建时使用 */
+//@import "../components/common/nl_common.scss";
+//@import "../components/common/nl_sidebar.scss";
+//@import "../components/common/nl_download.scss";
+//@import "../components/common/nl_common_page.scss";
