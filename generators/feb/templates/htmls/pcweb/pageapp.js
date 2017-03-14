@@ -8,27 +8,23 @@
  */
 
 import React from 'react';
-var Header = require('../common/n_header.js');
-var Footer = require('../common/n_footer.js');
-var Sidebar = require('../common/n_sidebar.js');
+import { Card } from 'antd';
+import Footer from '../common/nl_footer.js'
+import Sidebar from '../common/nl_sidebar.js';
+import NLDownload from '../common/nl_download.js';
+import NLDownloadType from '../../../../global_define/download_type.js';
 
 export default module.exports = class <%= classedName %>App extends React.Component {
 
     static propTypes = {
-        breadcrumb : React.PropTypes.object
     }
 
     static defaultProps = {
-        breadcrumb : [ //面包屑配置
-            {'text': '首页'}, {'text': '我的页面'}
-        ]
     }
 
     constructor (props) {
         super (props);
         this.state = {
-            sidebarClose: false,
-            selectedDate: 'no',
         };
     }
 
@@ -41,28 +37,33 @@ export default module.exports = class <%= classedName %>App extends React.Compon
     }
 
     /**
-     * 设置sidebar状态
-     * @param {[type]} sdClosed [description]
-     */
-    setStateChange (sdClosed){
-        this.setState({
-            sidebarClose : sdClosed
-        });
-    }
-
-    /**
      * 组件渲染
      * @return {[type]} [description]
      */
     render () {
-        return (
-            <div className="container-fluid">
-                <Header onStateChange={this.setStateChange} breadcrumb={this.props.breadcrumb} />
-                <div className="container-con">
-                    <Sidebar sidebarClose={this.state.sidebarClose} />
-                    <div id="main" className={this.state.sidebarClose ? 'sidebarClose' : ''}></div>
+        let me = this;
+        let { props } = me;
+        let { dispatch, BlockStatistic } = props;
+        let extra = (
+                <div className="more-function">
+                    <NLDownload generateDownloadParam={{}} taskType={NLDownloadType.my_inventory}
+                                disabled={false}/>
+                    <span className="sep-line"></span>
+                    <a href="../retail/nlife_faq.html?q=my_inventory" target="_blank">帮助</a>
+                    <button id="nl-theme-sw" title="点击切换主题" onClick={this.switchTheme}>{window.defaultThemeText}</button>
                 </div>
-                <Footer sidebarClose={this.state.sidebarClose} />
+        );
+
+        return (
+            <div id="nlife">
+                <Sidebar type='my_retailer'/>
+                <div className="content">
+                    <Card bordered={false} title="我的零售商" extra={extra}>
+
+                    </Card>
+                    <Footer />
+                </div>
+                <div className="card-sep"></div>
             </div>
         )
     }
