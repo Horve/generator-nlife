@@ -9,6 +9,7 @@
 var g_mend = new Date();
 import React from 'react';
 import ReactDOM from 'react-dom'
+import '../scss/<%= pageName %>.scss';
 
 var <%= classedName %>App = require('../components/<%= pageName %>/app.js');
 
