@@ -8,9 +8,10 @@
  */
 
 import React from 'react';
-import { Card } from 'antd';
-import Footer from '../common/nl_footer.js'
-import Sidebar from '../common/nl_sidebar.js';
+import NlifeRootView from '../common/frame/nl_root_view';
+import SidebarCommon from '../common/nl_sidebar_common';
+import NLCard from '../common/nl_card_n.js';
+
 import NLDownload from '../common/nl_download.js';
 import NLDownloadType from '../../../../global_define/download_type.js';
 
@@ -36,6 +37,12 @@ export default module.exports = class <%= classedName %>App extends React.Compon
 
     }
 
+    renderTitle() {
+        let title = '发起线上采购';
+
+        return title;
+    }
+
     /**
      * 组件渲染
      * @return {[type]} [description]
@@ -55,16 +62,18 @@ export default module.exports = class <%= classedName %>App extends React.Compon
         );
 
         return (
-            <div id="nlife">
-                <Sidebar type='my_retailer'/>
-                <div className="content">
-                    <Card bordered={false} title="页面名称" extra={extra}>
+            <NlifeRootView>
+                <SidebarCommon type=''></SidebarCommon>
+                <NLCard
+                    bordered={false}
+                    title={this.renderTitle()}
+                    extra={extra}
+                    isThemeSwitchVisible={false}
+                    isUserInfoVisible={true}
+                    >
 
-                    </Card>
-                    <Footer />
-                </div>
-                <div className="card-sep"></div>
-            </div>
+                </NLCard>
+            </NlifeRootView>
         )
     }
 

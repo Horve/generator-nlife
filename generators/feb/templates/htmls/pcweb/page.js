@@ -10,11 +10,19 @@ var g_mend = new Date();
 import React from 'react';
 import ReactDOM from 'react-dom'
 import '../scss/<%= pageName %>.scss';
+import <%= classedName %>App from ('../components/<%= pageName %>/app.js');
 
-var <%= classedName %>App = require('../components/<%= pageName %>/app.js');
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import reducer from '../reducers/purchase/onlinepurchase';
+
+let store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
-    <<%= classedName %>App />,
+    <Provider store={store}>
+        <<%= classedName %>App />
+    </Provider>,
     document.getElementById('container')
 );
 
