@@ -63,7 +63,7 @@ module.exports = yeoman.Base.extend({
       classedName: name
     }));
     this.fs.write(this.destinationPath('./app/front_end/app/scss/' + this.props.pageName + '.scss'), scss({
-      classedName: this.props.pageName
+      pageName: this.props.pageName
     }));
     // this.fs.write(this.destinationPath('./htmls/' + this.props.pageName + '.html'), html({
     //   pageName: this.props.pageName
