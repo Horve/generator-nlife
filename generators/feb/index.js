@@ -15,15 +15,15 @@ module.exports = yeoman.Base.extend({
     var prompts = [{
       type: 'inut',
       name: 'projName',
-      message: '请输入新页面所属项目s(如：purchase):'
+      message: '请输入新页面所属项目I(如：purchase):'
     }, {
       type: 'inut',
       name: 'pageName',
-      message: '请输入新页面名称(如：nlife_onlinepurchase):'
+      message: '请输入新页面名称II(如：nlife_onlinepurchase):'
     }, {
       type: 'confirm',
       name: 'isCreateNewPage',
-      message: '确定要创建新页面(y/n)?',
+      message: '确定要创建新页面III(y/n)?',
       default: true
     }];
 
