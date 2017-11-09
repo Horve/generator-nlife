@@ -15,7 +15,7 @@ module.exports = yeoman.Base.extend({
     var prompts = [{
       type: 'inut',
       name: 'projName',
-      message: '请输入新页面所属项目(如：purchase):'
+      message: '请输入新页面所属项目s(如：purchase):'
     }, {
       type: 'inut',
       name: 'pageName',
