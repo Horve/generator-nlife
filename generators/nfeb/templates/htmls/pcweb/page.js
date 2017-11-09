@@ -10,7 +10,7 @@ var g_mend = new Date();
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 import '../scss/<%= pageName %>.scss';
-import <%= classedName %>App from ('../components/<%= pageName %>/app.js');
+import <%= classedName %>App from '../components/<%= pageName %>/app.js';
 
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
