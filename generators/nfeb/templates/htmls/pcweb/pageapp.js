@@ -24,11 +24,7 @@ class <%= classedName %>App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-    };
-  }
-
-  componentWillMount() {
+    this.state = { };
   }
 
   contextSetPageTitle() {
@@ -42,29 +38,21 @@ class <%= classedName %>App extends React.Component {
       bordered: false,
       isThemeSwitchVisible: false,
       isUserInfoVisible: true,
-      pageName: '<%= classedName %>'
+      pageName: '<%= pageName %>'
     });
   }
 
   componentDidMount() {
-
+    this.contextSetPageTitle();
   }
 
   render() {
-    let me = this;
-    let { props } = me;
-    let { dispatch } = props;
-
-    return (
-      <div>
-      </div>
-    )
+    return <div></div>;
   }
-
 };
 
 <%= classedName %>App.contextTypes = {
   setPageTitleBar: React.PropTypes.func
 };
 
-exports default <%= classedName %>App;
+export default <%= classedName %>App;

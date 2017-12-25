@@ -52,8 +52,8 @@ module.exports = yeoman.Base.extend({
 
     this.fs.write(this.destinationPath('./app/front_end/app/components/' + this.props.pageName + '/app.js'), app({
       projName: this.props.projName,
-      appname: name,
-      pageName: name,
+      appname: this.props.pageName,
+      pageName: this.props.pageName,
       classedName: name
     }));
     this.fs.write(this.destinationPath('./app/front_end/app/pages/' + this.props.pageName + '.js'), entry({
