@@ -6,10 +6,8 @@
  * page of the <%= appname %>
  * `<<%= classedName %>App/>` entry file
  */
-var g_msatrt = +new Date();
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import NLWPO from '../lib/wpo';
 import '../scss/<%= pageName %>.scss';
 import <%= classedName %>App from '../components/<%= pageName %>/app.js';
 
@@ -29,8 +27,3 @@ export default class <%= classedName %>AppEntry extends Component {
     );
   };
 }
-
-//自定义测速上报
-window.onload = function () {
-  NLWPO.speed(0, +new Date() - g_msatrt); //页面执行耗时
-};

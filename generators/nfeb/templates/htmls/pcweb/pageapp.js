@@ -8,9 +8,6 @@
  */
 
 import React from 'react';
-import NlifeRootView from '../common/frame/nl_root_view';
-import SidebarCommon from '../common/nl_sidebar_common';
-import NLCard from '../common/nl_card_n.js';
 import NLDownload from '../common/nl_download.js';
 import NLDownloadType from '../../../../global_define/download_type.js';
 
